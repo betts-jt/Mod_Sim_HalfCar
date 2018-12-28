@@ -70,14 +70,10 @@ Fs = 0;
 figure(9)
 plot(a,WheelDisp.signals.values)
 xlabel('Time, s')
-ylabel('Force, N')
-xlabel('Time, s')
 ylabel('Displacement, m')
 
 figure(10)
 plot(a,WheelVel.signals.values)
-xlabel('Time, s')
-ylabel('Force, N')
 xlabel('Time, s')
 ylabel('Velocity, m/s')
 
@@ -87,15 +83,11 @@ Fs = -m2*g;
 figure(11)
 plot(a,WheelDisp.signals.values)
 xlabel('Time, s')
-ylabel('Force, N')
-xlabel('Time, s')
 ylabel('Displacement, m')
 axis([0 a(end) -0.000001 0.000001])
 
 figure(12)
 plot(a,WheelVel.signals.values)
-xlabel('Time, s')
-ylabel('Force, N')
 xlabel('Time, s')
 ylabel('Velocity, m/s')
 axis([0 a(end) -0.000001 0.000001])
@@ -122,6 +114,41 @@ plot(a,WheelVel.signals.values)
 xlabel('Time, s')
 ylabel('Force, N')
 xlabel('Time, s')
+ylabel('Velocity, m/s')
+
+clear WheelDisp WheelVel Fs k a g
+
+%% Quarter car model tests
+clear 
+SetCoefficients
+
+k=0;
+[a] = sim('QuaterCar_Model');
+
+figure(15)
+hold on
+grid on
+plot(a,WheelDisp.signals.values)
+xlabel('Time, s')
 ylabel('Displacement, m')
 
-clear WheelDisp WheelVel Fs k a
+figure(16)
+hold on
+grid on
+plot(a,WheelVel.signals.values)
+xlabel('Time, s')
+ylabel('Velocity, m/s')
+
+figure(17)
+hold on
+grid on
+plot(a,BodyDisp.signals.values)
+xlabel('Time, s')
+ylabel('Displacement, m')
+
+figure(18)
+hold on
+grid on
+plot(a,BodyVel.signals.values)
+xlabel('Time, s')
+ylabel('Velocity, m/s')
