@@ -26,7 +26,7 @@ plot(a,b(:,2))
 xlabel('Time, s')
 ylabel('Velocity, m/s')
 
-clear a
+clear a BodyDisplacement BodyVelocity
 %% Suspention model tests
 s2 = 1; s2d = 0; s1 = 0; s1d = 0;
 [a] = sim('SuspentionModel');
@@ -55,3 +55,47 @@ figure(8)
 plot(a,SusForce.signals.values)
 xlabel('Time, s')
 ylabel('Force, N')
+
+clear s2 s2d s1 s1d SusForce
+
+%% Wheel Model Tests
+kt = 0;
+
+k=0;
+Fs = 0;
+[a] = sim('WheelModel');
+
+figure(9)
+plot(a,WheelDisp.signals.values)
+xlabel('Time, s')
+ylabel('Force, N')
+xlabel('Time, s')
+ylabel('Displacement, m')
+
+figure(10)
+plot(a,WheelVel.signals.values)
+xlabel('Time, s')
+ylabel('Force, N')
+xlabel('Time, s')
+ylabel('Velocity, m/s')
+
+Fs = -m2*g;
+[a] = sim('WheelModel');
+
+figure(11)
+plot(a,WheelDisp.signals.values)
+xlabel('Time, s')
+ylabel('Force, N')
+xlabel('Time, s')
+ylabel('Displacement, m')
+axis([0 tout(end) -0.000001 0.000001])
+
+figure(12)
+plot(a,WheelVel.signals.values)
+xlabel('Time, s')
+ylabel('Force, N')
+xlabel('Time, s')
+ylabel('Velocity, m/s')
+axis([0 tout(end) -0.000001 0.000001])
+
+kt = 14e4;
