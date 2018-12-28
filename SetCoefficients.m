@@ -1,5 +1,5 @@
 m1 = 250; % 1/4 body mass. kg
-m2 = ; % Tyre mass. kg
-ks = ; % Suspention stiffness. N/m
-cs = ; % Suspention Damping. Ns/m
-kt = ; % Tyre Stiffness. N/m
+m2 = 20; % Tyre mass. kg
+ks = 2e4; % Suspention stiffness. N/m
+cs = 1000; % Suspention Damping. Ns/m
+kt = 14e4; % Tyre Stiffness. N/m
