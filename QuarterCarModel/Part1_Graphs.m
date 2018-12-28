@@ -1,3 +1,5 @@
+clear all
+SetCoefficients
 %% Body displacement Tests
 a=0;
 [a, b] = sim('BodyModel');
@@ -88,7 +90,7 @@ xlabel('Time, s')
 ylabel('Force, N')
 xlabel('Time, s')
 ylabel('Displacement, m')
-axis([0 tout(end) -0.000001 0.000001])
+axis([0 a(end) -0.000001 0.000001])
 
 figure(12)
 plot(a,WheelVel.signals.values)
@@ -96,6 +98,28 @@ xlabel('Time, s')
 ylabel('Force, N')
 xlabel('Time, s')
 ylabel('Velocity, m/s')
-axis([0 tout(end) -0.000001 0.000001])
+axis([0 a(end) -0.000001 0.000001])
+
+% For these graphs set the  time to 0.5s to get a clear graph. Also in
+% these the saturatuion block has been removes to avoid the value
+% constantly rising
 
 kt = 14e4;
+Fs = 0;
+g=0;
+k=1;
+[a] = sim('WheelModel');
+
+figure(13)
+plot(a,WheelDisp.signals.values)
+xlabel('Time, s')
+ylabel('Force, N')
+xlabel('Time, s')
+ylabel('Displacement, m')
+
+figure(14)
+plot(a,WheelVel.signals.values)
+xlabel('Time, s')
+ylabel('Force, N')
+xlabel('Time, s')
+ylabel('Displacement, m')
