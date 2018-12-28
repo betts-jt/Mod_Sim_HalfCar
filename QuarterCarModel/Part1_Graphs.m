@@ -28,7 +28,7 @@ plot(a,b(:,2))
 xlabel('Time, s')
 ylabel('Velocity, m/s')
 
-clear a BodyDisplacement BodyVelocity
+clear a b BodyDisplacement BodyVelocity
 %% Suspention model tests
 s2 = 1; s2d = 0; s1 = 0; s1d = 0;
 [a] = sim('SuspentionModel');
@@ -123,3 +123,5 @@ xlabel('Time, s')
 ylabel('Force, N')
 xlabel('Time, s')
 ylabel('Displacement, m')
+
+clear WheelDisp WheelVel Fs k a
