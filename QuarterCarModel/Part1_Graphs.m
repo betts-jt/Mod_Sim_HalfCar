@@ -176,3 +176,49 @@ plot(a,BodyDisp.signals.values)
 xlabel('Time, s')
 ylabel('Displacement, m')
 
+clear all
+SetCoefficients
+g=0;
+k=1;
+kt= 1e6;
+m2=0.1;
+cs=10000;
+
+[a] = sim('QuaterCar_Model');
+
+figure(21)
+hold on
+grid on
+plot(a,WheelDisp.signals.values)
+xlabel('Time, s')
+ylabel('Displacement, m')
+
+figure(22)
+hold on
+grid on
+plot(a,BodyDisp.signals.values)
+xlabel('Time, s')
+ylabel('Displacement, m')
+
+clear all
+SetCoefficients
+g=0;
+k=1;
+kt= 1e6;
+m2=0.1;
+
+[a] = sim('QuaterCar_Model');
+
+figure(23)
+hold on
+grid on
+plot(a,WheelDisp.signals.values)
+xlabel('Time, s')
+ylabel('Displacement, m')
+
+figure(24)
+hold on
+grid on
+plot(a,BodyDisp.signals.values)
+xlabel('Time, s')
+ylabel('Displacement, m')
