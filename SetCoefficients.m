@@ -6,7 +6,7 @@ mb = 500; % Mass of 1/2 car. kg
 a = 1.25; % Distance of front wheel from 1/4 car center of mass. m
 b = 1.4; % Distance of rear wheel from 1/4 car center of mass. m
 
-v = 1; % Car speed. m/s
+v = 10; % Car speed. m/s
 
 % Check if speed = 0 to avoid an infinate delay
 if v == 0
@@ -38,3 +38,7 @@ lambda = 1; % Wave length of road. m
 Period = lambda/v; % Period of sine wave. s
 Fre = 1/Period; % Frequency of sine wave. Hz
 Fre_r = Fre*2*pi; % Frequency of sine wave. Hrad/s
+
+%% Coefficients used for hump back bridge
+HumpHight = 2; % Height of humpback bridge. m
+HumpLegnth = 20; % Legnth of humback bridge. m
