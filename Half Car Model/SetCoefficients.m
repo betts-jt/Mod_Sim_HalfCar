@@ -6,6 +6,14 @@ mb = 500; % Mass of 1/2 car. kg
 a = 1.25; % Distance of front wheel from 1/4 car center of mass. m
 b = 1.4; % Distance of rear wheel from 1/4 car center of mass. m
 
+v = 10; % Car speed. m/s
+
+% Check if speed = 0 to avoid an infinate delay
+if v == 0
+    delay = 0;
+else
+    delay = (a+b)/v;
+end
 %% 1/4 car coeffcients
 m1 = mb/2; % 1/4 body mass. kg
 m2 = 20; % Tyre mass. kg
