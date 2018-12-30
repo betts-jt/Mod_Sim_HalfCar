@@ -1,10 +1,13 @@
 clear
 
-%% 1/2 Car coefficients
-I = 600; % Second moment of area of 1/2 car. kg/m^2
-mb = 500; % Mass of 1/2 car. kg
+%% Full Car coefficients
+I_theta = 600; % moment of area of 1/2 car pitch. kg/m^2
+I_phi = 1000; % moment of area of 1/2 car roll. kg/m^2
+
+mb = 1000; % Mass of 1/2 car. kg
 a = 1.25; % Distance of front wheel from 1/4 car center of mass. m
 b = 1.4; % Distance of rear wheel from 1/4 car center of mass. m
+s = 3; % Width of car. m
 
 v = 10; % Car speed. m/s
 
@@ -16,7 +19,7 @@ else
 end
 
 %% 1/4 car coeffcients
-m1 = mb/2; % 1/4 body mass. kg
+m1 = mb/4; % 1/4 body mass. kg
 m2 = 20; % Tyre mass. kg
 
 ks = 2e4; % Suspention stiffness. N/m
