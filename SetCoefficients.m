@@ -9,8 +9,8 @@ mb = 1000; % Mass of 1/2 car. kg
 a = 1.25; % Distance of front wheel from 1/4 car center of mass. m
 b = 1.4; % Distance of rear wheel from 1/4 car center of mass. m
 s = 3; % Width of car. m
-c = 1.5; % Distance of COM to left wheels. m
-d = 1.5; % Distance of COM to right wheels. m
+c = 1.3; % Distance of COM to left wheels. m
+d = 1.7; % Distance of COM to right wheels. m
 
 v = 10; % Car speed. m/s
 
@@ -48,3 +48,5 @@ Fre_r = Fre*2*pi; % Frequency of sine wave. Hrad/s
 %% Coefficients used for hump back bridge
 HumpHight = 2; % Height of humpback bridge. m
 HumpLegnth = 20; % Legnth of humback bridge. m
+
+sim('FullCar_Model')
