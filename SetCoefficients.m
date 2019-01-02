@@ -12,7 +12,7 @@ s = 3; % Width of car. m
 c = 1.3; % Distance of COM to left wheels. m
 d = 1.7; % Distance of COM to right wheels. m
 
-v = 5; % Car speed. m/s
+v = 10; % Car speed. m/s
 
 % Check if speed = 0 to avoid an infinate delay
 if v == 0
