@@ -50,7 +50,7 @@ Fre = 1/Period; % Frequency of sine wave. Hz
 Fre_r = Fre*2*pi; % Frequency of sine wave. Hrad/s
 
 %% Coefficients used for hump back bridge
-HumpHight = 2; % Height of humpback bridge. m
+HumpHight = 0.75; % Height of humpback bridge. m
 HumpLegnth = 20; % Legnth of humback bridge. m
 
 sim('FullCar_Model')
