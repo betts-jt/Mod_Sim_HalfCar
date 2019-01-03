@@ -12,14 +12,7 @@ s = 3; % Width of car. m
 c = 1.3; % Distance of COM to left wheels. m
 d = 1.7; % Distance of COM to right wheels. m
 
-v = 10; % Car speed. m/s
-
-% Check if speed = 0 to avoid an infinate delay
-if v == 0
-    delay = 0;
-else
-    delay = (a+b)/v;
-end
+[v, v_hump, delay] = setSpeed(10, a, b); % Car speed. m/s
 
 %% 1/4 car coeffcients
 mbh = mb/2; % Half body mass. kg
@@ -35,7 +28,7 @@ kt = 14e4; % Tyre Stiffness. N/m
 csc = 600; % Suspention Damping Compression. Ns/m
 cse = 1200; % Suspention Damping Extention. N/m
 
-g = 9.81; % Acceleration due to gravity. m/s^2
+g = 9.81; % Acceler6ation due to gravity. m/s^2
 
 x1 = 0.2; % Extention at which the spring stiffness increases. m 
 x2 = 0.25; % maximum spring displacement either positive or negative. m
@@ -50,7 +43,8 @@ Fre = 1/Period; % Frequency of sine wave. Hz
 Fre_r = Fre*2*pi; % Frequency of sine wave. Hrad/s
 
 %% Coefficients used for hump back bridge
-HumpHight = 0.75; % Height of humpback bridge. m
+HumpHight = 2; % Height of humpback bridge. m*
 HumpLegnth = 20; % Legnth of humback bridge. m
+
 
 sim('FullCar_Model')
