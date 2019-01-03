@@ -12,7 +12,7 @@ s = 3; % Width of car. m
 c = 1.3; % Distance of COM to left wheels. m
 d = 1.7; % Distance of COM to right wheels. m
 
-[v, v_hump, delay] = setSpeed(10, a, b); % Car speed. m/s
+[v, v_hump, delay] = setSpeed(13, a, b); % Car speed. m/s
 
 %% 1/4 car coeffcients
 mbh = mb/2; % Half body mass. kg
@@ -47,4 +47,4 @@ HumpHight = 2; % Height of humpback bridge. m*
 HumpLegnth = 20; % Legnth of humback bridge. m
 
 
-sim('FullCar_Model')
+  sim('FullCar_Model')
