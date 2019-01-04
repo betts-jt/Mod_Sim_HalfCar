@@ -5,15 +5,21 @@ SetCoefficients_QC
 a=0;
 [a, b] = sim('BodyModel');
 figure(1)
-plot(a,b(:,1))
+hold on
+grid on
+plot(a,b(:,1), 'r')
 xlabel('Time, s')
 ylabel('Displacement, m')
+set(figure(1),'Position',[10 10 1000 300])
 
 
 figure(2)
+hold on
+grid on
 plot(a,b(:,2))
 xlabel('Time, s')
 ylabel('Velocity, m/s')
+set(figure(2),'Position',[10 10 1000 300])
 
 a=1;
 [a, b] = sim('BodyModel');
@@ -140,6 +146,10 @@ grid on
 plot(a,WheelDisp.signals.values)
 xlabel('Time, s')
 ylabel('Displacement, m')
+plot(a,BodyDisp.signals.values, 'r--')
+xlabel('Time, s')
+ylabel('Displacement, m')
+legend('Wheel','Body')
 
 figure(16)
 hold on
@@ -147,13 +157,6 @@ grid on
 plot(a,WheelVel.signals.values)
 xlabel('Time, s')
 ylabel('Velocity, m/s')
-
-figure(17)
-hold on
-grid on
-plot(a,BodyDisp.signals.values)
-xlabel('Time, s')
-ylabel('Displacement, m')
 
 figure(18)
 hold on
@@ -186,10 +189,9 @@ ylabel('Displacement, m')
 
 clear all
 SetCoefficients
-g=0;
-k=1;
-kt= 1e6;
-m2=0.1;
+g=9.81;
+ks= 1e8;
+m2=20;
 cs=10000;
 
 [a] = sim('QuaterCar_Model');
@@ -198,6 +200,7 @@ figure(21)
 hold on
 grid on
 plot(a,WheelDisp.signals.values)
+plot(a,BodyDisp.signals.values, 'r--')
 xlabel('Time, s')
 ylabel('Displacement, m')
 
@@ -211,9 +214,9 @@ ylabel('Displacement, m')
 clear all
 SetCoefficients
 g=0;
-k=1;
-kt= 1e6;
-m2=0.1;
+kt= 1e8;
+m2=.1;
+cs = 10;
 
 [a] = sim('QuaterCar_Model');
 
