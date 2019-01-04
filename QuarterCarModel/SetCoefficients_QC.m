@@ -5,7 +5,7 @@
 clear
 
 % Masses
-m1 = mb/2; % 1/4 body mass. kg
+m1 = 250; % 1/4 body mass. kg
 m2 = 20; % Tyre mass. kg
 
 % Spring Coefficients
