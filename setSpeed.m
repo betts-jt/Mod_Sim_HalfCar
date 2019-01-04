@@ -1,4 +1,4 @@
-function [v , v_hump, delay] = setSpeed(v, a, b)
+function [v_hump, delay] = setSpeed(v, a, b)
 % This function is used to set the various parameters needed for the car
 % model in simulink that relate to the speed of the car.
 %   Where;
