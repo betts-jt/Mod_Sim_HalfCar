@@ -1,6 +1,6 @@
 clear all
 close all
-SetCoefficients
+SetCoefficients_QC
 %% Body displacement Tests
 a=0;
 [a, b] = sim('BodyModel');
@@ -69,14 +69,16 @@ Fs = 0;
 [a] = sim('WheelModel');
 
 figure(9)
-plot(a,WheelDisp.signals.values)
-xlabel('Time, s')
-ylabel('Displacement, m')
+plot(a,WheelDisp.signals.values, 'r')
+xlabel('Time (s)')
+ylabel('Displacement (m)')
+set(figure(9),'Position',[10 10 1000 300])
 
 figure(10)
 plot(a,WheelVel.signals.values)
-xlabel('Time, s')
-ylabel('Velocity, m/s')
+xlabel('Time (s)')
+ylabel('Velocity (m/s)')
+set(figure(10),'Position',[10 10 1000 300])
 
 Fs = -m2*g;
 [a] = sim('WheelModel');
@@ -104,18 +106,24 @@ k=1;
 [a] = sim('WheelModel');
 
 figure(13)
-plot(a,WheelDisp.signals.values)
+hold on
+grid on
+plot(a,WheelDisp.signals.values, 'r')
 xlabel('Time, s')
 ylabel('Force, N')
 xlabel('Time, s')
 ylabel('Displacement, m')
+set(figure(13),'Position',[10 10 1000 300])
 
 figure(14)
+hold on
+grid on
 plot(a,WheelVel.signals.values)
 xlabel('Time, s')
 ylabel('Force, N')
 xlabel('Time, s')
 ylabel('Velocity, m/s')
+set(figure(14),'Position',[10 10 1000 300])
 
 clear WheelDisp WheelVel Fs k a g
 
