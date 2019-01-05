@@ -1,9 +1,10 @@
 clear all
-SetCoefficients_HC
-[a] = sim('HalfCar_BodyModel');
+close all
+SetCoefficients
+[a] = sim('HalfCar_Model');
 
 figure(1)
-plot(a,PitchVel.signals.values, 'r')
+plot(a,WheelDisp.signals.values, 'r')
 xlabel('Time (s)')
 ylabel('Pitch (Rad/s)')
 
