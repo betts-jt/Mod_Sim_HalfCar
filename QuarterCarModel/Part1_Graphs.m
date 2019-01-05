@@ -212,11 +212,13 @@ xlabel('Time, s')
 ylabel('Displacement, m')
 
 clear all
-SetCoefficients
+SetCoefficients_QC
 g=0;
 kt= 1e8;
 m2=.1;
-cs = 10;
+cs = 0;
+cse=0;
+csc=0;
 
 [a] = sim('QuaterCar_Model');
 
