@@ -2,12 +2,12 @@
 %   Sets the values for the coefficients and masses needed for the simulink
 %   Half car model
 
-clear
+clear all
 
 %% 1/2 Car coefficients
 
 I = 600; % Second moment of area of 1/2 car. kg/m^2
-mbh = 500; % Mass of 1/2 car. kg
+mb = 500; % Mass of 1/2 car. kg
 a = 1.25; % Distance of front wheel from 1/4 car center of mass. m
 b = 1.4; % Distance of rear wheel from 1/4 car center of mass. m
 
@@ -22,7 +22,7 @@ end
 
 %% 1/4 car coeffcients
 % Masses
-m1 = mbh/2; % 1/4 body mass. kg
+m1 = mb/2; % 1/4 body mass. kg
 m2 = 20; % Tyre mass. kg
 
 % Spring Coefficients
