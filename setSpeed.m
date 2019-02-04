@@ -1,4 +1,4 @@
-function [v_hump, delay] = setSpeed(v, a, b)
+function [v_hump, delay, Period, Fre_r] = setSpeed(v, a, b, lambda)
 % This function is used to set the various parameters needed for the car
 % model in simulink that relate to the speed of the car.
 %   Where;
@@ -24,5 +24,10 @@ if v == 0
 else
     v_hump = v; % Set speed for humpback road profile to be the car speed
 end
+
+%% Set sine coefficeints
+Period = lambda/v; % Period of sine wave. s
+Fre = 1/Period; % Frequency of sine wave. Hz
+Fre_r = Fre*2*pi; % Frequency of sine wave. Hrad/s
 
 end
